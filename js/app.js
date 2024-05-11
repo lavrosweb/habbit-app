@@ -76,7 +76,7 @@ function rerenderBody(activeHabbit) {
 		<div class="hobbit__comment">
 		  ${activeHabbit.days[index].comment}
 		</div>
-		<button class="hobbit__delete">
+		<button class="hobbit__delete" onclick="deleteDays(${index})">
 		  <img src="./images/delete.svg" alt="Удалить день" />
 		</button>`;
     page.body.hobbits.appendChild(element);
@@ -116,6 +116,18 @@ function addDays(event) {
     return habbit;
   });
   form["comment"].value = "";
+  rerender(globalActiveHabbitId);
+  saveData();
+}
+
+function deleteDays(index) {
+  habbits = habbits.map((habbit) => {
+    if (habbit.id === globalActiveHabbitId) {
+      habbit.days.splice(index, 1);
+      return habbit;
+    }
+    return habbit;
+  });
   rerender(globalActiveHabbitId);
   saveData();
 }
