@@ -16,6 +16,9 @@ const page = {
     hobbits: document.querySelector(".hobbits"),
     nextDay: document.querySelector(".hobbit__day"),
   },
+  popup: {
+    index: document.getElementById("add-habbit-popup"),
+  },
 };
 
 // utils
@@ -29,6 +32,14 @@ function loadData() {
 
 function saveData() {
   localStorage.setItem(HABBIT_KEY, JSON.stringify(habbits));
+}
+
+function togglePopup() {
+  if (page.popup.index.classList.contains("cover_hidden")) {
+    page.popup.index.classList.remove("cover_hidden");
+  } else {
+	  page.popup.index.classList.add("cover_hidden");
+  }
 }
 
 // render

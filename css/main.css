@@ -198,7 +198,7 @@ h1 {
   left: 44px;
 }
 
-.hobbit__input {
+input {
   border: 1px solid #e7ebfb;
   border-radius: 9px;
   padding: 12px 12px 12px 48px;
@@ -210,7 +210,7 @@ h1 {
   border: 1px solid red;
 }
 
-.hobbit__add {
+.button {
   background: #edecfe;
   border-radius: 9px;
   border: none;
@@ -219,4 +219,103 @@ h1 {
   color: #5051f9;
   cursor: pointer;
   padding: 14px 32px 11px;
+}
+
+.cover {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover_hidden {
+  display: none;
+}
+
+.popup {
+  box-shadow: 0 8px 14px 12px rgba(56, 56, 56, 0.05);
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+h2 {
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.icon-label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #768396;
+  margin-bottom: 9px;
+}
+
+.icon-select {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 18px;
+}
+
+.icon {
+  border: 1px solid #5051f9;
+  background: none;
+  border-radius: 14px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon:hover {
+  background: #6a6afb;
+}
+
+.icon:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.icon_active {
+  background: #5051f9;
+}
+
+.icon_active img {
+  filter: brightness(0) invert(1);
+}
+
+.popup__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.popup__form input {
+  padding-left: 20px;
+}
+
+.popup__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  padding: 3px;
+  cursor: pointer;
 }
