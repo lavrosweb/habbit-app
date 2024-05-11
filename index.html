@@ -41,8 +41,9 @@
           <div class="hobbits"></div>
           <div class="hobbit">
             <div class="hobbit__day">День</div>
-            <form action="" class="hobbit__form">
+            <form action="" class="hobbit__form" onsubmit="addDays(event)">
               <input
+                name="comment"
                 type="text"
                 class="hobbit__input"
                 placeholder="Комментарий"
@@ -52,7 +53,7 @@
                 alt="Иконка сообщения"
                 class="message"
               />
-              <button class="hobbit__add">Готово</button>
+              <button class="hobbit__add" type="submit">Готово</button>
             </form>
           </div>
         </main>
