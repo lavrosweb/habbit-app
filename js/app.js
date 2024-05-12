@@ -61,7 +61,7 @@ function validateAndGetForm(form, fields) {
     }
     res[field] = fieldValue;
   }
-  
+
   for (const field of fields) {
     if (!res[field]) {
       return;
@@ -131,6 +131,7 @@ function rerender(activeHabbitId) {
   if (!activeHabbit) {
     return;
   }
+  document.location.replace(document.location.pathname + "#" + activeHabbitId);
   rerenderMenu(activeHabbit);
   rerenderHead(activeHabbit);
   rerenderBody(activeHabbit);
@@ -184,7 +185,10 @@ function addHabbit(event) {
     return;
   }
 
-  const maxId = habbits.reduce((acc, habbit) => acc > habbit.id ? acc : habbit.id, 0);
+  const maxId = habbits.reduce(
+    (acc, habbit) => (acc > habbit.id ? acc : habbit.id),
+    0
+  );
 
   const habbit = {
     id: maxId + 1,
@@ -203,5 +207,11 @@ function addHabbit(event) {
 
 (() => {
   loadData();
-  rerender(habbits[0].id);
+  const hashId = Number(document.location.hash.replace("#", ""));
+  const urlHabbit = habbits.find((habbit) => habbit.id === hashId);
+  if (urlHabbit) {
+    rerender(urlHabbit.id);
+  } else {
+    rerender(habbits[0].id);
+  }
 })();
