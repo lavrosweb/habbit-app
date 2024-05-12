@@ -42,11 +42,7 @@
           <div class="hobbit">
             <div class="hobbit__day">День</div>
             <form action="" class="hobbit__form" onsubmit="addDays(event)">
-              <input
-                name="comment"
-                type="text"
-                placeholder="Комментарий"
-              />
+              <input name="comment" type="text" placeholder="Комментарий" />
               <img
                 src="./images/message-icon.svg"
                 alt="Иконка сообщения"
@@ -72,14 +68,20 @@
               <img src="./images/food.svg" alt="" />
             </button>
           </div>
-          <form class="popup__form">
+          <form class="popup__form" onsubmit="addHabbit(event)">
             <input type="text" name="name" placeholder="Название" />
-            <input type="text" name="icon" hidden placeholder="Иконка" value="sport">
+            <input
+              type="text"
+              name="icon"
+              hidden
+              placeholder="Иконка"
+              value="sport"
+            />
             <input type="number" name="target" placeholder="Цель" />
-            <button class="button">Добавить</button>
+            <button class="button" type="submit"">Добавить</button>
           </form>
           <button class="popup__close" onclick="togglePopup()">
-            <img src="./images/close.svg" alt="">
+            <img src="./images/close.svg" alt="" />
           </button>
         </div>
       </div>

@@ -206,7 +206,7 @@ input {
   width: 100%;
 }
 
-.hobbit__input.error {
+input.error {
   border: 1px solid red;
 }
 
